@@ -15,7 +15,7 @@ class BertParent(object):
         'bert-large-uncased': (BertModel, BertTokenizer),
         'xlnet-base-cased': (XLNetModel, XLNetTokenizer),
         'xlm-mlm-enfr-1024': (XLMModel, XLMTokenizer),
-        'distilbert-base-uncased': (DistilBertModel, DistilBertTokenizer)
+        'distilbert-base-uncased': (DistilBertModel, DistilBertTokenizer),
         'bert-base-multilingual-cased': (BertModel, BertTokenizer)
     }
 
@@ -32,7 +32,7 @@ class BertParent(object):
         """
 
         base_model, base_tokenizer = self.MODELS.get(model, (None, None))
-        
+
         if custom_model:
             self.model = custom_model
         else:
