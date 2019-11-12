@@ -4,6 +4,7 @@ from summarizer.ClusterFeatures import ClusterFeatures
 from abc import abstractmethod
 import neuralcoref
 from spacy.lang.en import English
+#from spacy.lang.it import Italian
 import numpy as np
 
 
@@ -11,7 +12,7 @@ class ModelProcessor(object):
 
     def __init__(
         self,
-        model='bert-large-uncased',
+        model='bert-base-multilingual-cased',
         hidden: int=-2,
         reduce_option: str = 'mean',
         greedyness: float=0.45,
@@ -64,7 +65,7 @@ class SingleModel(ModelProcessor):
 
     def __init__(
         self,
-        model='bert-large-uncased',
+        model='bert-base-multilingual-cased',
         hidden: int=-2,
         reduce_option: str = 'mean',
         greedyness: float=0.45,
@@ -89,7 +90,7 @@ class Summarizer(SingleModel):
 
     def __init__(
         self,
-        model='bert-large-uncased',
+        model='bert-base-multilingual-cased',
         hidden: int=-2,
         reduce_option: str = 'mean',
         greedyness: float=0.45,
